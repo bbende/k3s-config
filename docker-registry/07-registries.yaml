@@ -1,0 +1,11 @@
+mirrors:
+  docker.registry.private:
+    endpoint:
+      - "https://docker.registry.private"
+configs:
+  "docker.registry.private":
+    auth:
+      username: registry
+      password: xxxxxx
+    tls:
+      insecure_skip_verify: true
