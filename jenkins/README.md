@@ -10,9 +10,11 @@
 * Added an ingress with the host `jenkins.private`
 * Updated `/etc/hosts` mapping on laptop so `jenkins.private` can be accessed through control plane node.
 
-3) Installed Kubernetes plugin in Jenkins. Required restarting Jenkins (https://jenkins.private/safeRestart).
+3) Manage Jenkins -> Manage Nodes and Clouds -> Configure Master Node -> Set Num Executors to 0
 
-4) In Jenkins Kubernetes Cloud Configuration:
+4) Installed Kubernetes plugin in Jenkins. Required restarting Jenkins (https://jenkins.private/safeRestart).
+
+5) In Jenkins Kubernetes Cloud Configuration:
 * Set `Kubernetes Namespace` to `jenkins`
 * Set `Jenkins URL` to `http://jenkins:8080`
 * Set `Pod Label` to `jenkins = executor`
@@ -20,7 +22,7 @@
 * Add `Pod Template` named `default-agent` in namespace `Jenkins`
 * In `default-agent`, add a container template named `jnlp` with `Docker Image` of `pi4k8s/inbound-agent:4.3`, this overrides the default agent with an image that works on arm64
 
-5) Create a Pipeline job with the following:
+6) Create a Pipeline job with the following:
 ```
 pipeline {
     agent {
