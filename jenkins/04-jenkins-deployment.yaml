@@ -19,7 +19,7 @@ spec:
       serviceAccountName: jenkins-admin
       containers:
         - name: jenkins
-          image: jenkins4eval/jenkins:latest
+          image: jenkins/jenkins:2.417-jdk11
           resources:
             limits:
               memory: "1Gi"

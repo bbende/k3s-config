@@ -39,3 +39,5 @@ pipeline {
     }
 }
 ```
+
+jenkins4eval/jenkins:latest
